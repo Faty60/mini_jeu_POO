@@ -31,8 +31,9 @@ while (user.life_points > 0) && (player1.life_points > 0 || player2.life_points 
         puts "[e] connaître son état de santé"
         puts " "
         puts "Attaquer un joueur en vu : "
-        puts "[0] Joisiane 10 points de vie "
-        puts "[1] José 10 points de vie"
+        puts "[0] #{player1.show_state} "
+        puts "[1] #{player2.show_state}"
+
     
         puts "Entrez votre choix :"
         print "> "
@@ -48,11 +49,12 @@ while (user.life_points > 0) && (player1.life_points > 0 || player2.life_points 
         elsif choice == "1"
             user.attacks(player2)
         end
+        
     end
     puts "Les ennemies attaquent !!!"
-    player1.attacks(user)
+        player1.attacks(user)
+        player2.attacks(user) 
         break if (player1.life_points <= 0) || (player2.life_points <= 0) 
-    player2.attacks(user) 
 end
 
 
